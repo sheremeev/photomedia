@@ -33,39 +33,19 @@
         <div class="container">
           <div class="row align-items-center">
             <div class="col-xl-7 col-lg-7">
-              <div class="main-menu  d-none d-lg-block">
+              <div class="main-menu  <!--d-none d-lg-block-->">
                 <nav>
                   <ul id="navigation">
-                    <li><a class="active" href="../index.html">Home</a></li>
-                    <li><a href="../category.html">catagory</a></li>
-                    <li><a href="../about.html">About</a></li>
-                    <li><a href="#">pages <i class="ti-angle-down"></i></a>
-                      <ul class="submenu">
-                        <li><a href="../elements.html">elements</a></li>
-                        <li><a href="../single-blog.html">single-blog</a></li>
-                      </ul>
+                    <li v-for="link in links" :key="link.url">
+                      <router-link
+                          active-class="active"
+                          :to="link.url"
+                          tag="a"
+                      >{{ link.title }}</router-link>
                     </li>
-                    <li><a href="../contact.html">Contact</a></li>
                   </ul>
                 </nav>
               </div>
-            </div>
-            <div class="col-xl-5 col-lg-5">
-              <div class="get_serch">
-                <a id="search_1" href="javascript:void(0)"><i class="ti-search"></i></a>
-              </div>
-            </div>
-            <div class="col-12">
-              <div class="mobile_menu d-block d-lg-none"></div>
-            </div>
-          </div>
-          <div class="search_input" id="search_input_box">
-            <div class="container ">
-              <form class="d-flex justify-content-between search-inner">
-                <input type="text" class="form-control" id="search_input" placeholder="Search Here">
-                <button type="submit" class="btn"></button>
-                <span class="ti-close" id="close_search" title="Close Search"></span>
-              </form>
             </div>
           </div>
         </div>
@@ -77,7 +57,15 @@
 
 <script>
 export default {
-  name: "Header"
+  name: "Navigation",
+  data: () => ({
+    links: [
+      {title: 'Home', url: '/'},
+      {title: 'Category', url: '/category'},
+      {title: 'About', url: '/about'},
+      {title: 'Elements', url: '/elements'},
+    ]
+  })
 }
 </script>
 

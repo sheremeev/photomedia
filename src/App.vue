@@ -1,62 +1,27 @@
 <template>
-    <router-view/>
-  <html class="no-js" lang="zxx">
-    <head>
-      <meta charset="utf-8">
-      <meta http-equiv="x-ua-compatible" content="ie=edge">
-      <title>Photomedia</title>
-      <meta name="description" content="">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-
-      <!-- <link rel="manifest" href="site.webmanifest"> -->
-      <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
-      <!-- Place favicon.ico in the root directory -->
-    </head>
-    <body>
-      <Header/>
-      <Body/>
-      <Footer/>
-    </body>
-  </html>
-
+  <Navigation/>
+  <div id="app">
+    <component :is="layout">
+      <router-view/>
+    </component>
+  </div>
+  <Footer/>
 </template>
 
 <script>
-import '@/js/vendor/modernizr-3.5.0.min.js';
-import '@/js/vendor/jquery-1.12.4.min.js';
-import '@/js/popper.min.js';
-//import '@/js/bootstrap.min.js';
-//import 'owl.carousel/dist/owl.carousel.min';
-//import '@/js/owl.carousel.min.js';
-//import '@/js/isotope.pkgd.min.js';
-//import '@/js/ajax-form.js';
-// import '@/js/waypoints.min.js';
-// import '@/js/jquery.counterup.min.js';
-// import '@/js/imagesloaded.pkgd.min.js';
-// import '@/js/scrollIt.js';
-// import '@/js/jquery.scrollUp.min.js';
-// import '@/js/wow.min.js';
-// import '@/js/nice-select.min.js';
-// import '@/js/jquery.slicknav.min.js';
-// import '@/js/jquery.magnific-popup.min.js';
-// import '@/js/plugins.js';
-// import '@/js/contact.js';
-// import '@/js/jquery.ajaxchimp.min.js';
-// import '@/js/jquery.form.js';
-// import '@/js/jquery.validate.min.js';
-// import '@/js/mail-script.js';
-
-//import '@/js/main.js';
-
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import Body from "@/components/Body";
+  import Navigation from "@/components/Navigation";
+  import Footer from "@/components/Footer";
   export default {
     name: 'app',
+    computed: {
+      layout() {
+        console.log(this.$route.meta)
+        return (this.$route.meta.layout || 'main')
+      }
+    },
     components: {
-      Header,
-      Body,
-      Footer
+      Footer,
+      Navigation
     }
   }
 </script>
