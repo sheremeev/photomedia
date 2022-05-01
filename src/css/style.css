@@ -1,5 +1,19 @@
-@import url("https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,600,600i,700,700i|Roboto:300,300i,400,500,500i,700&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,900|Roboto:300,300i,400,400i,500,700,700i&display=swap");
+.bm-burger-button {
+  position: relative;
+  top: 0;
+  width: 30px;
+  height: 25px;
+}
+
+.bm-burger-button .line-style {
+  background-color: white;
+  height: 15%;
+}
+
+.header-area .main-header-area .main-menu.mobile ul li {
+  display: block;
+}
+
 /* line 1, ../../Arafath/CL/CL August/204. Blog/204. Blog- HTML/scss/_extend.scss */
 .flex-center-start {
   display: -webkit-box;
@@ -674,14 +688,14 @@ h3 {
 @media (max-width: 767px) {
   /* line 62, ../../Arafath/CL/CL August/204. Blog/204. Blog- HTML/scss/_header.scss */
   .header-area .main-header-area {
-    padding: 25px 0;
+    padding: 15px 0;
   }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
   /* line 62, ../../Arafath/CL/CL August/204. Blog/204. Blog- HTML/scss/_header.scss */
   .header-area .main-header-area {
-    padding: 25px 0;
+    padding: 15px 0;
   }
 }
 

@@ -32,12 +32,17 @@
           <div class="row">
             <div class="col-xl-12">
               <div class="footer_links text-center">
-                <ul>
-                  <li><a href="index.html">home</a></li>
-                  <li><a href="catagory.html">category</a></li>
-                  <li><a href="about.html">about</a></li>
-                  <li><a href="contact.html">contact</a></li>
-                </ul>
+                <nav>
+                  <ul id="navigation">
+                    <li v-for="link in links" :key="link.url">
+                      <router-link
+                          active-class="active"
+                          :to="link.url"
+                          tag="a"
+                      >{{ link.title }}</router-link>
+                    </li>
+                  </ul>
+                </nav>
               </div>
             </div>
           </div>
@@ -55,7 +60,15 @@
 
 <script>
 export default {
-  name: "Footer"
+  name: "Footer",
+  data: () => ({
+    links: [
+      {title: 'Home', url: '/'},
+      {title: 'Category', url: '/category'},
+      {title: 'About', url: '/about'},
+      {title: 'Elements', url: '/elements'},
+    ]
+  })
 }
 </script>
 
