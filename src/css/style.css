@@ -18,6 +18,19 @@
   padding: 0;
 }
 
+.carousel .carousel__pagination-button.carousel__pagination-button--active {
+  background-color: black;
+}
+
+.carousel .carousel__pagination-button {
+  background-color: lightgray;
+}
+
+.carousel .carousel__next,
+.carousel .carousel__prev {
+  background-color: black;
+}
+
 /* line 1, ../../Arafath/CL/CL August/204. Blog/204. Blog- HTML/scss/_extend.scss */
 .flex-center-start {
   display: -webkit-box;

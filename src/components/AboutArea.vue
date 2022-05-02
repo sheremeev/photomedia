@@ -23,7 +23,18 @@
         </div>
         <div class="col-xl-12">
           <div class="about_thumb">
-            <img src="../img/about/banner.png" alt="">
+            <carousel :items-to-show="1"
+                      wrapAround="true"
+                      snapAlign="center">
+              <slide v-for="slide in 10" :key="slide">
+                <img src="../img/about/banner.png">
+              </slide>
+
+              <template #addons>
+                <navigation />
+                <pagination />
+              </template>
+            </carousel>
           </div>
         </div>
         <div class="about_details">
@@ -49,9 +60,19 @@
 </template>
 
 <script>
+
+import 'vue3-carousel/dist/carousel.css';
+import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel';
+
 export default {
-  name: "AboutArea"
-}
+  name: 'AoutAreab',
+  components: {
+    Carousel,
+    Slide,
+    Pagination,
+    Navigation,
+  },
+};
 </script>
 
 <style scoped>
