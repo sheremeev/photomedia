@@ -7,11 +7,33 @@
 
 .bm-burger-button .line-style {
   background-color: white;
-  height: 15%;
+  height: 10%;
+}
+
+.header-area .main-header-area .main-menu.mobile .submenu-mobile {
+  margin-left: 23px;
+}
+
+.header-area .main-header-area .main-menu.mobile ul li a {
+  padding: 10px 16px;
+}
+
+.header-area .main-header-area .main-menu.mobile ul li a::before {
+  background: transparent;
+}
+
+.header-area .main-header-area .main-menu.mobile ul.submenu-mobile li a {
+  font-size: 14px;
+  padding: 10px;
 }
 
 .header-area .main-header-area .main-menu.mobile ul li {
   display: block;
+}
+
+.main-menu #navigation-mobile [class^="ti-"],
+.main-menu #navigation [class^="ti-"] {
+    margin-left: 6px;
 }
 
 .main-menu.mobile .bm-item-list>* {
@@ -720,6 +742,7 @@ h3 {
 .header-area .main-header-area .main-menu ul li {
   display: inline-block;
   position: relative;
+    padding-right: 2px;
 }
 
 /* line 75, ../../Arafath/CL/CL August/204. Blog/204. Blog- HTML/scss/_header.scss */
@@ -754,13 +777,6 @@ h3 {
 /* line 94, ../../Arafath/CL/CL August/204. Blog/204. Blog- HTML/scss/_header.scss */
 .header-area .main-header-area .main-menu ul li a i {
   font-size: 9px;
-}
-
-@media (max-width: 767px) {
-  /* line 94, ../../Arafath/CL/CL August/204. Blog/204. Blog- HTML/scss/_header.scss */
-  .header-area .main-header-area .main-menu ul li a i {
-    display: none !important;
-  }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -5467,5 +5483,3 @@ h6 {
   margin-right: 10px;
   font-size: 12px;
 }
-
-/*# sourceMappingURL=style.css.map */

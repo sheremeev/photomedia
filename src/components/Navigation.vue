@@ -35,11 +35,21 @@
               <nav>
                 <ul id="navigation">
                   <li v-for="link in links" :key="link.url">
-                    <router-link
+                    <router-link v-if="!link.submenu"
                         active-class="active"
                         :to="link.url"
                         tag="a"
                     >{{ link.title }}</router-link>
+                    <template v-else>
+                      <a href="#">{{ link.title }}<i class="ti-angle-down"></i></a>
+                      <ul class="submenu">
+                        <li v-for="sublink in link.submenu" :key="link.submenu.url">
+                          <router-link :to="sublink.url"
+                                       tag="a"
+                          >{{ sublink.title}}</router-link>
+                        </li>
+                      </ul>
+                    </template>
                   </li>
                 </ul>
               </nav>
@@ -47,15 +57,33 @@
           </div>
         </div>
         <div class="main-menu mobile d-block d-lg-none">
-          <Slide :closeOnNavigation="true">
+          <Slide ref="mobileSlideMenu" :crossIcon="false" :closeOnNavigation="false">
             <nav>
               <ul id="navigation-mobile">
                 <li v-for="link in links" :key="link.url">
-                  <router-link
-                      active-class="active"
-                      :to="link.url"
-                      tag="a"
+                  <router-link v-if="!link.submenu"
+                               active-class="active"
+                               :to="link.url"
+                               tag="a"
+                               v-on:click="onClickMobileMenu"
                   >{{ link.title }}</router-link>
+                  <template v-else>
+                    <div class="v-collapse" @click="link.submenu.collapse = !link.submenu.collapse">
+                      <div class="v-collapse-header" >
+                        <a href="#">{{ link.title }}<i class="ti-angle-down"></i></a>
+                      </div>
+                      <transition name="fadeHeight" appear>
+                        <ul class="submenu-mobile" v-if="!link.submenu.collapse">
+                          <li v-for="submenu in link.submenu" :key="submenu.url">
+                            <router-link :to="submenu.url"
+                                         tag="a"
+                                         v-on:click="onClickMobileMenu"
+                            >{{ submenu.title }}</router-link>
+                          </li>
+                        </ul>
+                      </transition>
+                    </div>
+                  </template>
                 </li>
               </ul>
             </nav>
@@ -72,11 +100,24 @@ import { Slide } from 'vue3-burger-menu'
 export default {
   name: "Navigation",
   components: {
-    Slide // Register your component
+    Slide
+  },
+  methods: {
+    onClickMobileMenu: function () {
+      document.dispatchEvent(new KeyboardEvent('keyup', {
+        'key': 'Escape'
+      }));
+    }
   },
   data: () => ({
     links: [
       {title: 'Home', url: '/'},
+      {title: 'Portfolio', url: '#', collapse: false, submenu: [{
+          title: 'Elements', url: '/elements'
+        }, {
+          title: 'Category', url: '/category'
+        }]
+      },
       {title: 'Category', url: '/category'},
       {title: 'About', url: '/about'},
       {title: 'Elements', url: '/elements'},
@@ -86,5 +127,28 @@ export default {
 </script>
 
 <style scoped>
+
+.fadeHeight-enter-active {
+  opacity: 0;
+  max-height: 0;
+  transition: all .3s;
+}
+
+.fadeHeight-leave-active {
+  transition: all .3s;
+  max-height: 230px;
+}
+.fadeHeight-enter,
+.fadeHeight-leave-to
+{
+  opacity: 0;
+  max-height: 0px;
+}
+
+.fadeHeight-enter-to,
+.fadeHeight-leave {
+  max-height: 230px;
+  opacity: 1;
+}
 
 </style>
