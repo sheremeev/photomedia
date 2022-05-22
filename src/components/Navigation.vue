@@ -68,12 +68,12 @@
                                v-on:click="onClickMobileMenu"
                   >{{ link.title }}</router-link>
                   <template v-else>
-                    <div class="v-collapse" @click="link.submenu.collapse = !link.submenu.collapse">
-                      <div class="v-collapse-header" >
-                        <a href="#">{{ link.title }}<i class="ti-angle-down"></i></a>
+                    <div class="v-collapse">
+                      <div class="v-collapse-header">
+                        <a href="#" v-on:click="onChangeStateMenu(link)">{{ link.title }}<i class="ti-angle-down"></i></a>
                       </div>
                       <transition name="fadeHeight" appear>
-                        <ul class="submenu-mobile" v-if="!link.submenu.collapse">
+                        <ul class="submenu-mobile" v-if="!link.collapse">
                           <li v-for="submenu in link.submenu" :key="submenu.url">
                             <router-link :to="submenu.url"
                                          tag="a"
@@ -103,7 +103,10 @@ export default {
     Slide
   },
   methods: {
-    onClickMobileMenu: function () {
+    onChangeStateMenu (link) {
+      link.collapse = !link.collapse;
+    },
+    onClickMobileMenu () {
       document.dispatchEvent(new KeyboardEvent('keyup', {
         'key': 'Escape'
       }));
