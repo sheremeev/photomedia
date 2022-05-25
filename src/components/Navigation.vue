@@ -124,6 +124,7 @@ export default {
       {title: 'Category', url: '/category'},
       {title: 'About', url: '/about'},
       {title: 'Elements', url: '/elements'},
+      {title: 'Images', url: '/images'},
     ]
   })
 }

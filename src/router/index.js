@@ -23,6 +23,12 @@ const routes = [
     name: 'elements',
     meta: {layout: 'main'},
     component: () => import('../views/Elements.vue')
+  },
+  {
+    path: '/images',
+    name: 'images',
+    meta: {layout: 'main'},
+    component: () => import('../views/Images.vue')
   }
 ]
 

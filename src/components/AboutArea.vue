@@ -37,6 +37,7 @@
             </carousel>
           </div>
         </div>
+
         <div class="about_details">
           <div class="container">
             <div class="row">
@@ -70,8 +71,8 @@ export default {
     Carousel,
     Slide,
     Pagination,
-    Navigation,
-  },
+    Navigation
+  }
 };
 </script>
 
