@@ -30,15 +30,19 @@ export default {
   data() {
     return {
       images: [
-        'https://placekitten.com/802/800',
-        'https://placekitten.com/803/800',
-        'https://placekitten.com/804/800',
-        'https://placekitten.com/805/800',
-        'https://placekitten.com/806/800',
-        'https://placekitten.com/807/800',
-        'https://placekitten.com/808/800',
-        'https://placekitten.com/809/800',
-        'https://placekitten.com/810/800'
+         require('../img/1/1.jpg'),
+         require('../img/1/3.jpg'),
+         require('../img/1/3.jpg'),
+         require('../img/1/4.jpg'),
+         require('../img/1/5.jpg'),
+         require('../img/1/6.jpg'),
+         require('../img/1/7.jpg'),
+         require('../img/1/8.jpg'),
+         require('../img/1/9.jpg'),
+         require('../img/1/10.jpg'),
+         require('../img/1/11.jpg'),
+         require('../img/1/12.jpg'),
+         require('../img/1/13.jpg')
       ],
       index: null
     }
@@ -79,5 +83,10 @@ export default {
   }
   .hover-image-scale:hover {
     transform: scale(1.02); /* Увеличиваем масштаб */
+  }
+
+  .wrap.image {
+    border: 2px solid whitesmoke;
+    border-radius: 2px;
   }
 </style>

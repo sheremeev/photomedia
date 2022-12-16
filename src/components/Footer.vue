@@ -28,29 +28,11 @@
     </div>
     <div class="footer_bottom ">
       <div class="container">
-        <div class="footer_border">
-          <div class="row">
-            <div class="col-xl-12">
-              <div class="footer_links text-center">
-                <nav>
-                  <ul id="navigation">
-                    <li v-for="link in links" :key="link.url">
-                      <router-link
-                          active-class="active"
-                          :to="link.url"
-                          tag="a"
-                      >{{ link.title }}</router-link>
-                    </li>
-                  </ul>
-                </nav>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div class="footer_border"></div>
       </div>
       <div class="copyright_text text-center">
         <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-          Copyright &copy;2022 All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+          &copy;2021 - {{new Date().getFullYear()}} <i class="fa fa-heart-o" aria-hidden="true"></i>  Powered by <a href="https://vk.com/sheremeev" target="_blank">sheremeev</a>
           <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> </p>
       </div>
     </div>

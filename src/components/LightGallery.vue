@@ -152,4 +152,12 @@ export default {
 .blueimp-gallery-controls > .description {
   display: block;
 }
+
+.blueimp-gallery {
+  background-color: currentColor;
+}
+
+.slide.slide-active img {
+  border-radius: 2px;
+}
 </style>
