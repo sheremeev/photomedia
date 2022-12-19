@@ -4,12 +4,20 @@ header {
     z-index: 999990;
 }
 
+.mobile .bm-menu {
+    background: #f8f9fa;
+}
+
+.bm-overlay .main-header-area.white-bg{
+    background: transparent;
+}
+
 header .logo {
     text-align: center;
 }
 
 body {
-    background: antiquewhite;
+    background: white;
 }
 
 @media (max-width: 991px) {
@@ -26,7 +34,8 @@ body {
 }
 
 .bm-burger-button .line-style {
-    background-color: white;
+    background-color: #495057b8;
+    border-radius: 10px;
     height: 10%;
 }
 
@@ -741,7 +750,7 @@ h3 {
 
 /* line 62, ../../Arafath/CL/CL August/204. Blog/204. Blog- HTML/scss/_header.scss */
 .header-area .main-header-area {
-    background: #74b5b7;
+    background: #f8f9fa;
 }
 
 @media (max-width: 767px) {
@@ -832,7 +841,7 @@ h3 {
     position: absolute;
     left: 0;
     top: 140%;
-    background: #74b5b7;
+    background: #f8f9fa;
     width: 200px;
     z-index: 2;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.02);
@@ -1936,7 +1945,7 @@ h3 {
 
 /* line 1, ../../Arafath/CL/CL August/204. Blog/204. Blog- HTML/scss/_footer.scss */
 .footer {
-    background: cadetblue;
+    background: #f8f9fa;
 }
 
 /* line 3, ../../Arafath/CL/CL August/204. Blog/204. Blog- HTML/scss/_footer.scss */
@@ -1991,7 +2000,6 @@ h3 {
 /* line 40, ../../Arafath/CL/CL August/204. Blog/204. Blog- HTML/scss/_footer.scss */
 .footer .footer_text {
     font-size: 16px;
-    color: #FFFFFF;
     margin-top: 15px;
     margin-bottom: 15px;
 }
@@ -2048,7 +2056,6 @@ h3 {
 
 /* line 79, ../../Arafath/CL/CL August/204. Blog/204. Blog- HTML/scss/_footer.scss */
 .footer .footer_bottom .copyright_text p {
-    color: white;
     font-size: 16px;
     font-family: "Roboto", sans-serif;
     font-weight: 400;
