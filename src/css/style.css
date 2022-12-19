@@ -6,10 +6,11 @@ header {
 
 .mobile .bm-menu {
     background: #f8f9fa;
+    box-shadow: 0px -1px 4px 0px #cbc9c9;
 }
 
-.bm-overlay .main-header-area.white-bg{
-    background: transparent;
+.bm-overlay {
+    background: transparent !important;
 }
 
 header .logo {
