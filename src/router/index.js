@@ -29,6 +29,11 @@ const routes = [
     name: 'images',
     meta: {layout: 'main'},
     component: () => import('../views/Images.vue')
+  }, {
+    path: '/price',
+    name: 'price',
+    meta: {layout: 'main'},
+    component: () => import('../views/Price.vue')
   }
 ]
 

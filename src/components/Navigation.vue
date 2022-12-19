@@ -125,6 +125,7 @@ export default {
       {title: 'About', url: '/about'},
       {title: 'Elements', url: '/elements'},
       {title: 'Images', url: '/images'},
+      {title: 'Price', url: '/price'},
     ]
   })
 }
